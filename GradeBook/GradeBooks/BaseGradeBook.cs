@@ -116,15 +116,15 @@ namespace GradeBook.GradeBooks
                 switch (letterGrade)
                 {
                     case 'A':
-                        return 4;
+                        return 5;
                     case 'B':
-                        return 3;
+                        return 4;
                     case 'C':
-                        return 2;
+                        return 3;
                     case 'D':
-                        return 1;
+                        return 2;
                     case 'F':
-                        return 0;
+                        return 1;
                 }
             }
             else
