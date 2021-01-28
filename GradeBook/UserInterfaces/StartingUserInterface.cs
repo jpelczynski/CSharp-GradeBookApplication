@@ -43,22 +43,22 @@ namespace GradeBook.UserInterfaces
             var name = parts[1];
             var gradeType = parts[2];
             var isWeighted = parts[3];
-            
+            BaseGradeBook gradeBook;
             if (gradeType == GradeBookType.Standard.ToString())
             {
-                StandardGradeBook gradeBook = new StandardGradeBook(name);
+                gradeBook = new StandardGradeBook(name);
             }
-            //else if (gradeType == GradeBookType.Ranked.ToString())
-            //{
-            //    RankedGradeBook gradeBook = new RankedGradeBook(name);
-            //}
+            else if (gradeType == GradeBookType.Ranked.ToString())
+            {
+                gradeBook = new RankedGradeBook(name);
+            }
             else
             {
                 Console.WriteLine($"{gradeType} is not a supported type of gradebook, please try again");
                 return;
             }
             Console.WriteLine("Created gradebook {0}.", name);
-            //GradeBookUserInterface.CommandLoop(gradeBook);
+            GradeBookUserInterface.CommandLoop(gradeBook);
         }
 
         public static void LoadCommand(string command)
